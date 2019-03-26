@@ -1,2 +1,3 @@
 import '/imports/api/stuff';
-import '/imports/api/contact/index.js';
+import '/imports/api/contact/';
+import '/imports/api/note/';
