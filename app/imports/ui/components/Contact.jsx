@@ -24,7 +24,10 @@ class Contact extends React.Component {
   }
 
   onClick() {
-    Contacts.remove(this.props.contact._id, this.deleteCallback);
+    /* eslint-disable-next-line */
+    if (confirm('Do you wish to delete this contact?')) {
+      Contacts.remove(this.props.contact._id, this.deleteCallback);
+    }
   }
 
   render() {
@@ -52,6 +55,8 @@ class Contact extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <AddNote owner={this.props.contact.owner} contactId={this.props.contact._id}/>
+          </Card.Content>
+          <Card.Content extra>
             <Button basic onClick={this.onClick}>Delete</Button>
           </Card.Content>
         </Card>
